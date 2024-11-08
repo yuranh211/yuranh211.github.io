@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://blogger-7vb.pages.dev/'
 languageCode = 'zh-CN'
 timeZone = 'Asia/Shanghai'
 title = 'Rannaan'
@@ -6,7 +6,7 @@ title = 'Rannaan'
 # 主题
 theme  =  "hello-friend"
 summaryLength = 140
-hasCJKLanguage = true
+hasCJKLanguage = false
 
 # 每页显示的文章数量用于分页
 [pagination]
