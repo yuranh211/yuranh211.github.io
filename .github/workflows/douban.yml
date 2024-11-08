@@ -35,22 +35,3 @@ jobs:
       with:
         message: 'chore: update douban data'
         add: './data/douban'
-
-
-
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: 'latest'
-        extended: true
-
-    - name: Build
-      run: hugo --minify  --baseURL https://dem1tasse.github.io
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4.4.2
-      with:
-          branch: gh-pages
-          folder: public
-          clean: true
-          single-commit: true
-
