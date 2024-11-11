@@ -1,72 +1,29 @@
 ---
-title: '关于我'
-date: 2022-02-21 19:57:45
+title: '关于'
+date: 2020-03-14 12:41:27
 layout: 'posts'
-hideInList: false
 ---
 
-> 欢迎来到我的博客。当我断更时，可以用评论召唤我。
+[![Feedly](https://api-shields.edui.fun/badge/dynamic/json?url=https%3A%2F%2Fapi.swo.moe%2Fstats%2Ffeedly%2Fhttps%253A%252F%252Fimmmmm.com%252Ffeed&query=count&color=282c34&label=Feedly&labelColor=2bb24c&logo=feedly&logoColor=ffffff&suffix=+subs&cacheSeconds=3600)](https://immmmm.com/feed) [![Inoreader](https://api-shields.edui.fun/badge/dynamic/json?url=https%3A%2F%2Fapi.swo.moe%2Fstats%2Finoreader%2Fhttps%253A%252F%252Fimmmmm.com%252Ffeed&query=count&color=282c34&label=Inoreader&labelColor=007bc7&logo=data%3Aimage%2Fsvg+xml%3Bbase64%2CPHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTM2IDBjMTkuODgyIDAgMzYgMTYuMTE4IDM2IDM2UzU1Ljg4MiA3MiAzNiA3MiAwIDU1Ljg4MiAwIDM2IDE2LjExOCAwIDM2IDB6bS03Ljk5IDMwLjk4QzIwLjgyNSAzMC45OCAxNSAzNi44MDQgMTUgNDMuOTkgMTUgNTEuMTc1IDIwLjgyNSA1NyAyOC4wMSA1N2M3LjE4MyAwIDEzLjAwOS01LjgyNSAxMy4wMDktMTMuMDExIDAtNy4xODUtNS44MjYtMTMuMDA5LTEzLjAwOS0xMy4wMDl6bTMuNjcgNS41NjVhMy43MjcgMy43MjcgMCAxMS0uMDA1IDcuNDU0IDMuNzI3IDMuNzI3IDAgMDEuMDA0LTcuNDU0em0tMy42Ny0xNC43NTh2NC42ODdjOS42NTYgMCAxNy41MTYgNy44NTggMTcuNTE2IDE3LjUxNWg0LjY4OWMwLTEyLjI0Mi05Ljk2MS0yMi4yMDItMjIuMjA1LTIyLjIwMnptMC05Ljc4N3Y0LjY4N2M3LjI5MiAwIDE0LjE0OCAyLjg0IDE5LjMwNiA3Ljk5OCA1LjE1OCA1LjE1NyA3Ljk5NSAxMi4wMTQgNy45OTUgMTkuMzA0SDYwYzAtOC41NDQtMy4zMjgtMTYuNTc3LTkuMzctMjIuNjJDNDQuNTg1IDE1LjMyNiAzNi41NTQgMTIgMjguMDEgMTJ6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4%3D&suffix=+subs&cacheSeconds=3600)](https://immmmm.com/feed) [![Telegram](https://api-shields.edui.fun/badge/dynamic/json?url=https%3A%2F%2Fapi.swo.moe%2Fstats%2Ftelegram%2Flmm214&query=count&color=2CA5E0&label=%E6%9E%97%E6%9C%A8%E6%9C%A8%E5%92%8C%E4%BB%96%E7%9A%84%E6%9C%8B%E5%8F%8B%E4%BB%AC&labelColor=383838&logo=telegram&suffix=+°C&cacheSeconds=3600)](https://t.me/lmm214) [![GitHub](https://api-shields.edui.fun/badge/dynamic/json?url=https%3A%2F%2Fapi.swo.moe%2Fstats%2Fgithub%2Flmm214&query=count&color=181717&label=GitHub&labelColor=282c34&logo=github&suffix=+follows&cacheSeconds=3600)](https://github.com/lmm214)
 
-
-## 👨‍💻 关于我
-
-我是莉莉蒙（Lillian who），叫我莉莉安也可以。
-
-双子座，INFJ。
-
-爱折腾，但很菜。
-
-喜欢大家带我一起玩，但社恐。
-
-偶尔爆发写作欲，但三分钟热度。
-
-理论上的巨人，行动上的彩笔。
-
-### ❤️ 兴趣爱好
-
-- 💻折腾
-- 📚阅读
-- 📝写作
-- 📒手帐
-- 🖋文具
-- 软件
-
-
-### 📬 如何找到我
-
-- 公众号：莉莉蒙（微信号：Lillian_Memo）
-- Email： [📩ciwiehenfan@sina.com](mailto:ciwiehenfan@sina.com) 
-- 博客站现已开通评论，欢迎留言哦
-- 想收到新文章推送，请使用 RSS
-
-## 🏠 关于本站
-
-
-### 订阅我
-
-- RSS地址： feed://lillianwho.com/atom.xml 
 ### 博客程序
 
-- hugo：[https://gohugo.io](https://gohugo.io)
-- 主题：[木木](https://immmmm.com) 的 [hello-friend](https://github.com/lmm214/immmmm/tree/master/themes/hello-friend)
-- 博客方案（免费）：[obsidian+hugo+cloudflare](https://lillianwho.com/posts-hugo-cloudflare/)
-- 本站源码：https://github.com/lillian-who/lillian-who.github.io
+- Hugo：<https://gohugo.io/>
+- 本站源码：<https://github.com/lmm214/immmmm>
 
-如果你想要克隆我的博客，请看这里:
-{{<link "How-to-clone-my-blog">}}
+<!--more-->
 
-### 博客变迁
-- 2023-06-27 给博客增加邮件订阅。方案是 [tinyletter](https://app.tinyletter.com). 你可以在文章的底部表单，或者点击 [这里](https://tinyletter.com/lillianwho) 填写你的邮件地址进行订阅。（已去除）
-- 2023-03-18 给博客加入了twikoo评论
-- 2023-03-11 因原有腾讯云服务器到期，博客重新搬回github，但是保留了域名。用了[新的免费博客方案](https://lillianwho.com/posts/new-blog-sys/) ，将网站托管到了 cloudflare，它可以自动拉取托管到github的源码，然后用hugo的系统进行解析。同时改造了obsidian写博客和发博客的轮子，能够不离开ob就能一键发布博客。
-- 2022-10-18 受[木木大佬](https://immmmm.com/) 影响，博客系统换为hugo：[Hello Hugo](https://lillianwho.com/posts/hello-hugo/)。主题使用了木木分享的同款[hello-friend](https://github.com/lmm214/immmmm/tree/master/themes/hello-friend) 
-- 2022年9月，博客系统换成了 [Gridea](https://gridea.dev) ，用了非常好看的主题「Break」。当时写了文章推荐该主题： [宝藏主题Break](https://lillianwho.com/posts/bao-cang-gridea-zhu-ti-break/) 
-- 2022-02-25 [博客迁移](https://lillianwho.com/posts/博客迁移通知/)。有了独立域名，购买了腾讯云云服务器，访问地址变为：[http://lillianwho.com](http://lillianwho.com)
-- 2022-01-25 [博客改版](https://lillianwho.com/posts/博客改版/)。网站名改为「**喜于微**」。
-- 2021-09-23 [博客上线](https://lillianwho.com/posts/我的博客上线啦/)，当时使用的是github page，使用的博客系统是hexo，主题用的是好看的butterfly。
+### 维护项目
 
+- 教学工具导航: <https://edui123.com/>
 
+### 我的朋友
 
+{{< friends >}}
 
+### 欢迎打赏
 
-
+<figure>
+    <img src="https://pic.edui.fun/wx.jpg" alt="微信打赏" />
+    <figcaption>微信打赏</figcaption>
+</figure>
