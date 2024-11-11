@@ -1,4 +1,4 @@
 ---
-title: "词穷"
+title: "闲聊"
 slug: "chat"
 ---
