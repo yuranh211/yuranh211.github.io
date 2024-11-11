@@ -7,3 +7,4 @@ _Templates
 resources/
 .DS_Store
 .hugo_build.lock
+.DS_Store

@@ -1,9 +1,10 @@
-baseURL = 'https://lillianwho.com/'
-languageCode = 'zh-CN'
-timeZone = 'Asia/Shanghai'
-title = 'Lillian Who'
+baseURL  =  "https://immmmm.com"
+languageCode = "zh-CN"
+# DefaultContentLanguage = "zh-CN"
+title  =  "木木木木木"
+subtitle = "不问明天，悠然浪费"
 
-# 主题
+
 theme  =  "hello-friend"
 summaryLength = 140
 hasCJKLanguage = true
@@ -11,58 +12,59 @@ hasCJKLanguage = true
 paginate =  10
 # rss 输出数量
 rssLimit = 5
+timeout = '10m'
+ignoreErrors = ["error-remote-getjson","error-remote-getcsv"]
 
 [permalinks]
-  posts = "/posts/:filename/"
+  posts = "/:filename/"
   tags = "/tags/:slug/"
 
 [menu]
   [[menu.main]]
-  name="读书"
-  url="/posts/reading/"
+  name="哔哔"
+  url="/bbs/"
   weight="1"
   [[menu.main]]
-  name="Obsidian"
-  url="/posts/obsidian/"
+  name="友圈"
+  url="/friends/"
   weight="2"
   [[menu.main]]
-  name="闲聊"
-  url="/posts/chat/"
+  name="好物"
+  url="/goods/"
   weight="3"
   [[menu.main]]
   name="归档"
   url="/archives/"
   weight="4"
   [[menu.main]]
-  name="关于我"
+  name="导航"
+  url="https://edui123.com/"
+  weight="5"
+  [[menu.main]]
+  name="关于"
   url="/about/"
   weight="6"
-  [[menu.main]]
-  name="🔍"
-  url="/search/"
-  weight="6"
 
-
-
+[Author]
+  name = "林木木"
+  
 [params]
   # dir name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
   # "light" or "dark"
-  defaultTheme = "light"
+  defaultTheme = "dark"
   # if you set this to 0, only submenu trigger will be visible
-  # showMenuItems = 4
+  showMenuItems = 6
   # Enable to show reading time in minutes for posts
-  showReadingTime = true
+  showReadingTime = false
   logoText = "hello friend"
 
   MenuMore = "更多"
-  DateFormatList = "2006-01-02"
-  DateFormatSingle = "2006-01-02"
+  DateFormatList = "2006-01-02 15:04:05"
+  DateFormatSingle = "2006-01-02 15:04:05"
   ReadMore = "阅读全文"
-  
-  description = "生命就是反重力的过程"
-	keywords = "博客、app、折腾、生活、阅读、自律"
- 
+
+  EditPath = 'https://github.com/lmm214/immmmm/edit/master/content'
 
 [markup]
   [markup.goldmark]
@@ -74,14 +76,13 @@ rssLimit = 5
     startLevel = 1
     
 [outputs]
-  home = ["Atom", "HTML","JSON"] # <domain>/atom.xml
+  home = ["HTML","Atom","JSON"] # <domain>/atom.xml
   page = ["HTML"]
-  
+
 [outputFormats.Atom]
   mediatype = "application/rss"
   baseName = "atom"
 
 [params.twikoo]
 	enable = true
-  visitor = true
-  
+
