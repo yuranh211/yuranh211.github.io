@@ -13,7 +13,7 @@
   {{ if eq $PostCate "chat"}}
       {{ .Render "chat"}}
       <div class="post-content">
-        <a href="{{ .Permalink }}" rel="link"><img loading="lazy" decoding="async" class="post-avatar avatar" src="https://cravatar.cn/avatar/ba83fa02fc4b2ba621514941307e21be"></a>
+        <a href="{{ .Permalink }}" rel="link"><img loading="lazy" decoding="async" class="post-avatar avatar" src=https://cravatar.cn/avatar/{{ md5 "ciwiehenfan@sina.com" }}></a>
           {{ .Content }}
       </div>
   {{ else }}
@@ -21,7 +21,7 @@
     <div class="post-meta">
       {{ if .Date | default nil }}
         <span class="post-date">{{ .Date.Format ($.Site.Params.DateFormatSingle | default "2006-01-02") }}</span>
-        {{- if .Site.Params.twikoo.enable -}}
+        {{- if .Site.Params.twikoo.visitor -}}
           <span> / <span id="twikoo_visitors">0</span> 阅读</span>
         {{- end }}
         {{ if eq .Type $contentTypeName }}
@@ -31,21 +31,14 @@
         {{ end }}
       {{ end }}
     </div>
-    {{ if eq $PostCate "weekly"}}
-      {{ "[![Telegram](https://api-shields.edui.fun/badge/dynamic/json?url=https%3A%2F%2Fapi.swo.moe%2Fstats%2Ftelegram%2Fmemos_bbs&query=count&color=2CA5E0&label=Memos+%E5%B9%BF%E5%9C%BA&labelColor=383838&logo=telegram&suffix=+°C&cacheSeconds=3600)](https://t.me/memos_bbs) [![Telegram](https://api-shields.edui.fun/badge/dynamic/json?url=https%3A%2F%2Fapi.swo.moe%2Fstats%2Ftelegram%2Flmm214&query=count&color=2CA5E0&label=%E6%9E%97%E6%9C%A8%E6%9C%A8%E5%92%8C%E4%BB%96%E7%9A%84%E6%9C%8B%E5%8F%8B%E4%BB%AC&labelColor=383838&logo=telegram&suffix=+°C&cacheSeconds=3600)](https://t.me/lmm214)" | markdownify }}
-    {{ else }}  
-      {{ if .Params.feature}}
-        {{ if .Params.UseRelativeCover }}
-          <img loading='lazy' decoding="async" src="{{ (printf "%s%s" .Permalink .Params.feature ) }}" class="post-cover" />
-        {{ else }}
-          <img loading='lazy' decoding="async" src="{{ .Params.feature | absURL }}" class="post-cover" />
-        {{ end }}
+    {{ if .Params.feature }}
+      {{ if .Params.UseRelativeCover }}
+        <img loading='lazy' decoding="async" src="{{ (printf "%s%s" .Permalink .Params.feature ) }}" class="post-cover" />
+      {{ else }}
+        <img loading='lazy' decoding="async" src="{{ .Params.feature | absURL }}" class="post-cover" />
       {{ end }}
     {{ end }}
   
-    {{ if ne $PostCate "weekly"}}
-      {{ partial "gemini.html" . }}
-    {{ end }}
     <div class="post-content">
       {{ if .Params.toc }}{{ .TableOfContents }}{{ end }}
       {{ .Content }}
@@ -60,10 +53,6 @@
       </span>
     {{ end }}
   {{ end }}
-
-    <script type="module" src="/emaction.js?v=2308072"></script>
-    <emoji-reaction theme="system" class="reaction" endpoint="https://api-emaction.immmmm.com" reacttargetid="immmmm-{{ .File.BaseFileName }}"></emoji-reaction>
-
     <div class="clear"></div>
     
     {{ if eq .Type $.Site.Params.contentTypeName }}
@@ -78,18 +67,18 @@
             <hr />
           </div>
           <div class="pagination__buttons">
-            {{ if .NextInSection }}
+            {{ if .Next }}
               <span class="button previous">
-                <a href="{{ .NextInSection.Permalink }}">
+                <a href="{{ .Next.Permalink }}">
                   <span class="button__icon">←</span>
-                  <span class="button__text">{{ .NextInSection.Title }}</span>
+                  <span class="button__text">{{ .Next.Title }}</span>
                 </a>
               </span>
             {{ end }}
-            {{ if .PrevInSection }}
+            {{ if .Prev }}
               <span class="button next">
-                <a href="{{ .PrevInSection.Permalink }}">
-                  <span class="button__text">{{ .PrevInSection.Title }}</span>
+                <a href="{{ .Prev.Permalink }}">
+                  <span class="button__text">{{ .Prev.Title }}</span>
                   <span class="button__icon">→</span>
                 </a>
               </span>
@@ -99,6 +88,7 @@
       {{ end }}
     {{ end }}
 
+    <!-- {{ partial "subscribe-form.html" . }} -->
 
     {{ if not (eq .Params.Comments "false") }}
         {{ partial "comments.html" . }}
