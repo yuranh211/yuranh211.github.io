@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/reading/用认知行为疗法改善动力不足：行为激活.md",
+                "file": "search.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "用认知行为疗法改善动力不足：行为激活"
+              "title": "search"
             }
           }
         ]
@@ -172,16 +172,17 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "d9c1f07a607064e0",
+  "active": "49a5fe3c9ba2631b",
   "lastOpenFiles": [
-    "posts/欢迎使用Markdown 笔记.md",
-    "posts/movie/欢迎使用Markdown 笔记.md",
-    "posts/最近的memos集合.md",
+    "tags/_index.md",
     "posts/_index.md",
+    "posts/最近的memos集合.md",
+    "posts/欢迎使用Markdown 笔记.md",
+    "posts/reading/用认知行为疗法改善动力不足：行为激活.md",
+    "posts/movie/欢迎使用Markdown 笔记.md",
     "search.md",
     "about.md",
     "_index.md",
-    "posts/reading/用认知行为疗法改善动力不足：行为激活.md",
     "posts/2023-06-20.md",
     "posts/2023-06-22.md",
     "posts/reading/a-book-that-make-you-want-to-share.md",
@@ -191,7 +192,6 @@
     "posts/obsidian/Obsidian介绍.md",
     "posts/movie/movie-IMDB-tt4119590.md",
     "posts/movie/movie-IMDB-tt21909764.md",
-    "tags/_index.md",
     "archives/_index.md",
     "posts/obsidian/obsidian新手系列之你不可不知的插件.md",
     "posts/什么样的心态才是写文章的好心态.md",
