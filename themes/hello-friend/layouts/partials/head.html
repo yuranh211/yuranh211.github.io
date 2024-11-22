@@ -1,36 +1,48 @@
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta charset="UTF-8"/>
-<meta name="renderer" content="webkit"/>
-<meta name="force-rendering" content="webkit"/>
-<meta name="referrer" content="no-referrer">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
-<script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) document.write('\x3Cscript id="_iealwn_js" data-outver="11" src="https://support.dmeng.net/ie-alert-warning/latest.js">\x3C/script>'); </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="{{ if .IsHome }}{{ $.Site.Params.Subtitle }}{{ else }}{{ .Summary | plainify }}{{ end }}"/>
-<meta name="keywords" content="{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else }}{{ $.Site.Params.Keywords }}{{ end }}"/>
-
-<link rel="alternate" type="application/rss+xml" href="/feed" title="{{ $.Site.Title }}">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="{{ if .IsHome }}{{ $.Site.Params.Subtitle }}{{ else }}{{ .Summary | plainify }}{{ end }}"
+/>
+<meta
+  name="keywords"
+  content="{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else }}{{ $.Site.Params.Keywords }}{{ end }}"
+/>
+<meta name="robots" content="noodp" />
 <link rel="canonical" href="{{ .Permalink }}" />
-<link rel="stylesheet" href="/LXGWNeoZhiSong/lxgwneozhisong.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="/theme-lmm.css?v=2401-1">
-<link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}">
 
-<link rel="apple-touch-icon" href="{{ "favicon.ico" | absURL }}">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="{{ $.Site.Title }}">
-<link rel="bookmark" href="{{ "favicon.ico" | absURL }}">
-<link rel="apple-touch-icon-precomposed" sizes="180x180" href="{{ "favicon.ico" | absURL }}" >
+<!-- head custom -->
+{{- partial "prepended_head.html" . }}
+
+<!-- Theme CSS -->
+{{ $res := resources.Get "css/style.scss" }}
+{{ $style := $res | resources.ToCSS }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+<!-- Custom CSS to override theme properties (/static/style.css) -->
+<link rel="stylesheet" href="{{ "style.css" | absURL }}" />
+
+<!-- Icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "img/apple-touch-icon-144-precomposed.png" | absURL }}" />
+<link rel="shortcut icon" href="{{ "img/favicon.png" | absURL }}" />
+
+<!-- Fonts -->
+<link href="{{ (resources.Get "fonts/Inter-Italic.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="{{ (resources.Get "fonts/Inter-Regular.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="{{ (resources.Get "fonts/Inter-Medium.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="{{ (resources.Get "fonts/Inter-MediumItalic.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="{{ (resources.Get "fonts/Inter-Bold.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="{{ (resources.Get "fonts/Inter-BoldItalic.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+<!-- Twitter Card -->
+{{ template "_internal/twitter_cards.html" . }}
 
 <!-- OG data -->
-{{ partial "opengraph.html" . }}
+{{ template "_internal/opengraph.html" . }}
+
 <!-- RSS | JSON -->
 {{ range .AlternativeOutputFormats -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
-{{ end -}}
-{{- if not .Site.IsServer }}
-<script defer src="https://views.edui.fun/lmm214.js" data-website-id="ddb6c6c5-cb77-4e2d-a3fc-768f2957f78f"></script>
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 {{ end -}}
 
-<script  src="/quicklink.umd.js"></script>
-<script>window.addEventListener('load', () => {  quicklink.listen();});</script>
+<!-- head custom -->
+{{- partial "extended_head.html" . }}
