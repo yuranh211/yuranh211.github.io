@@ -106,20 +106,7 @@
     }
   </script>
   
-  <div class="home">
-    {{ $goods := getJSON "static/goods/goods.json" }}
-    <h3><a href="/goods/">近期好物</a></h3>
-    <div id="goods">
-    {{ range first 5 $goods.good}}
-    <div class="goods-bankuai img-hide">
-      <div class="goods-duiqi"><img loading="lazy" decoding="async" src="{{ .image }}"></div>
-      <div class="goods-jiage">{{ .jiage }}</div>
-      <div class="goods-title"><a href="{{ .link }}">{{ .title }}</a></div>
-      <div class="goods-note">{{ .note }}</div>
-    </div>
-    {{ end }}
-    </div>
-  </div>
+
 
   {{$movieitems := getJSON "https://dbapi.immmmm.com/list?type=movie" }}
   
