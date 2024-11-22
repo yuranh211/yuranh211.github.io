@@ -1,7 +1,4 @@
-{{ define "head" }}
-  {{ if .Paginator.HasPrev -}}<link rel="prefetch" href="{{ .Paginator.Prev.URL }}">{{- end }}
-  {{ if .Paginator.HasNext -}}<link rel="prefetch" href="{{ .Paginator.Next.URL }}">{{- end }}
-{{ end }}
+
 
 {{ define "main" }}
   {{ $isntDefault := not (or (eq (trim $.Site.Params.contentTypeName " ") "posts") (eq (trim $.Site.Params.contentTypeName " ") "")) }}
