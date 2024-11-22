@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><generator uri="https://gohugo.io/" version="0.124.1">Hugo</generator><title type="html">木木木木木</title><link href="https://yuranh211.github.io/" rel="alternate" type="text/html" title="html"/><link href="https://yuranh211.github.io/atom.xml" rel="self" type="application/rss+xml" title="atom"/><link href="https://yuranh211.github.io/index.json" rel="alternate" type="application/json" title="json"/><updated>2024-11-22T08:39:07+00:00</updated><author><name>林木木</name></author><id>https://yuranh211.github.io/</id><entry><title type="html">Ryujinx 模拟器上手记录</title><link href="https://yuranh211.github.io/ryujinx-switch/" rel="alternate" type="text/html"/><id>https://yuranh211.github.io/ryujinx-switch/</id><author><name>林木木</name></author><published>2024-11-10T13:38:32+08:00</published><updated>2024-11-10T13:38:32+08:00</updated><content type="html"><![CDATA[<p>十一假期看到消息 Ryujinx 删库，那会儿《智慧的再现》也刚发布，说是 M1 芯片就能流畅运行，咱着 M2 那不起飞，立刻尝个尾鲜。</p>
+<p>当然，支持正版，卡带已入。</p>
+<figure>
+    <img loading='lazy' decoding="async" src="https://r2m.immmmm.com/memos/2024/10/SCR-20241007-nkhd.jpeg.webp"/><figcaption>智慧的再现</figcaption></figure>
+
+<p>实测效果，能玩，微微卡，偶尔崩溃（使用渲染缓存后大大改善）。</p>
+<h3 id="模拟器key固件下载">模拟器、Key、固件下载</h3>
+<p>Ryujinx 模拟器 <a href="https://ryujinx.cn.uptodown.com/mac/download" target="_blank" rel="noopener nofollow noreferrer" >https://ryujinx.cn.uptodown.com/mac/download</a></p>
+<p>Ryujinx Prod Keys <a href="https://prodkeys.net/ryujinx-prod-keys-v2/" target="_blank" rel="noopener nofollow noreferrer" >https://prodkeys.net/ryujinx-prod-keys-v2/</a></p>
+<p>Ryujinx Firmware Switch 固件 <a href="https://prodkeys.net/ryujinx-firmware-v2/" target="_blank" rel="noopener nofollow noreferrer" >https://prodkeys.net/ryujinx-firmware-v2/</a></p>
+<h3 id="几点配置">几点配置</h3>
+<p>详细教程见 <a href="https://github.com/hhstore/blog/issues/398" target="_blank" rel="noopener nofollow noreferrer" >《MacOS 使用 Ryujinx 模拟器 + 手柄🎮 游玩 NS 游戏》</a>。</p>
+<h3 id="解锁全-amiibo">解锁全 amiibo</h3>
+<p>链接：<a href="https://pan.baidu.com/s/12ldEUYwPMm1rVa8XUUJBjw?pwd=6666" target="_blank" rel="noopener nofollow noreferrer" >https://pan.baidu.com/s/12ldEUYwPMm1rVa8XUUJBjw?pwd=6666</a></p>
+<p>文件很小2M秒下，放入模拟器中 <code>portable\system\amiibo</code></p>
+<h3 id="渲染缓存包">渲染缓存包</h3>
+<p>电报频道 @ryujinxmac，下载放入对应文件夹，第一次加载游戏会读取超大缓存，游戏中就流畅很多很多。</p>]]></content><category scheme="https://yuranh211.github.io/tags/%E6%97%A5%E5%B8%B8" term="%E6%97%A5%E5%B8%B8" label="日常"/></entry><entry><title type="html">前端调用 Umami API 数据</title><link href="https://yuranh211.github.io/hi-umami-api/" rel="alternate" type="text/html"/><id>https://yuranh211.github.io/hi-umami-api/</id><author><name>林木木</name></author><published>2024-11-10T12:09:43+08:00</published><updated>2024-11-10T12:09:43+08:00</updated><content type="html"><![CDATA[<p><a href="https://umami.is/" target="_blank" rel="noopener nofollow noreferrer" >Umami</a> 一个高颜值可自部署的统计应用。</p>
+<p>看着服务器负载常年低于10%，有一点点需求的应用，特别是能 Docker 部署的，全都安排上！看着基本的统计数据都有。不错不错！但，能直接 API 前端调用统计数据不？可以的，接口见官网： <a href="https://umami.is/docs/api" target="_blank" rel="noopener nofollow noreferrer" >https://umami.is/docs/api</a></p>
+<p>2024-11-10 更新：基于 Umami API V2。</p>
+<p>2023-06-11 更新：采用 @归臧 <a href="https://nuoea.com/use-umami-api/" target="_blank" rel="noopener nofollow noreferrer" >《使用 Umami Api 显示统计数据》</a> 获取 Token 。</p>
+<h3 id="安全优化建议">安全优化建议</h3>
+<p>可以使用 <a href="https://blog.zhheo.com/p/61e9.html" target="_blank" rel="noopener nofollow noreferrer" >@Heo</a> 的方式，一个 PHP 避免 Token 暴露。</p>
+<p>个人设定曲折些，Umami 后台新建用户时，角色设置为“仅浏览量”。创建团队，团队里加入需要统计的网站，然后通过仅浏览权限的用户加入团队，使用该用户账号密码获取 Token。</p>
+<h3 id="获取-token">获取 Token</h3>
+<p>Hoppscotch： <a href="https://hoppscotch.io/" target="_blank" rel="noopener nofollow noreferrer" >https://hoppscotch.io/</a></p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2023/06/umami-im-1.jpg" alt="umami-im-1"  /></p>
+<p>如图，成功后记录下 <code>token</code></p>
+<h3 id="获取-websiteid">获取 websiteId</h3>
+<pre tabindex="0"><code>https://u.edui.fun/websites/c27bd84b-02a3-4c3f-a168-0d7fadec9c74/
+</code></pre><p>如上链接中的 <code>c27bd84b-02a3-4c3f-a168-0d7fadec9c74</code> 就是 <code>websiteId</code>。</p>
+<h3 id="前端调用全站数据">前端调用全站数据</h3>
+<p>2024-11-10 更新：Umami API V2，<code>start_at</code> 变为 <code>startAt</code>,<code>end_at</code> 变为 <code>endAt</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tongji&#34;</span>&gt;总访问量 &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pvStatic&#34;</span>&gt;0&lt;/<span style="color:#f92672">span</span>&gt; 次 | 总访客数 &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;uvStatic&#34;</span>&gt;0&lt;/<span style="color:#f92672">span</span>&gt; 人&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;DOMContentLoaded&#39;</span>, () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">umiTongji</span>();
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">umiTongji</span>(){
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">umiToken</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;o7......w=&#34;</span>  <span style="color:#75715e">//获取到的 token
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">umiId</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c27bd84b-02a3-4c3f-a168-0d7fadec9c74&#34;</span> <span style="color:#75715e">//获取到的 websiteId
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">umiTime</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">parse</span>(<span style="color:#66d9ef">new</span> Date());
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">umiUrl</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://u.edui.fun/api/websites/&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">umiId</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/stats?startAt=1672848000000&amp;endAt=&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">umiTime</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">umiUrl</span>,{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;GET&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;cors&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cache</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;default&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;Authorization&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Bearer &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">umiToken</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>()).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">resdata</span> =&gt; {
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#pvStatic&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">resdata</span>.<span style="color:#a6e22e">pageviews</span>.<span style="color:#a6e22e">value</span>
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#uvStatic&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">resdata</span>.<span style="color:#a6e22e">uniques</span>.<span style="color:#a6e22e">value</span>
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>搞定！</p>
+<h3 id="更多当前在线数">更多：当前在线数……</h3>
+<pre tabindex="0"><code>GET /api/websites/{websiteId}/active  //获取网站上的活跃用户数。
+GET /api/websites/{websiteId}/events  //获取给定时间范围内的事件。
+GET /api/websites/{websiteId}/pageviews  //获取给定时间范围内的页面浏览量。
+GET /api/websites/{websiteId}/metrics  //获取给定时间范围内的指标。
+GET /api/websites/{websiteId}/stats  //获取汇总的网站统计信息。
+</code></pre><h3 id="更多教程">更多教程</h3>
+<p>官方 API ：<a href="https://umami.is/docs/website-stats" target="_blank" rel="noopener nofollow noreferrer" >https://umami.is/docs/website-stats</a></p>
+<p>Umami API 使用方法：<a href="https://www.zywvvd.com/notes/tools/umami/umami-api/umami-api/" target="_blank" rel="noopener nofollow noreferrer" >https://www.zywvvd.com/notes/tools/umami/umami-api/umami-api/</a></p>]]></content><category scheme="https://yuranh211.github.io/tags/%E6%8A%98%E8%85%BE" term="%E6%8A%98%E8%85%BE" label="折腾"/></entry><entry><title type="html">迁移 FRP 记录</title><link href="https://yuranh211.github.io/install-frp-record/" rel="alternate" type="text/html"/><id>https://yuranh211.github.io/install-frp-record/</id><author><name>林木木</name></author><published>2024-11-10T11:07:08+08:00</published><updated>2024-11-10T11:07:08+08:00</updated><content type="html"><![CDATA[<p>（旧文重更：2024/11/10）</p>
+<p>服务器到期在即，迁移 FRP 小记，为了把家里的 书库 <a href="https://hub.docker.com/r/talebook/talebook" target="_blank" rel="noopener nofollow noreferrer" >talebook</a> 能无障碍在线使用。</p>
+<p>群晖拉起 <code>frpc</code>，服务器部署 <code>frps</code>，路由器端口转发，给个子域名解析，即可实现域名访问服务。</p>
+<h3 id="公网服务器部署-frps">公网服务器部署 frps</h3>
+<p>项目地址：<a href="https://github.com/stilleshan/frps" target="_blank" rel="noopener nofollow noreferrer" >https://github.com/stilleshan/frps</a></p>
+<p>启动 Docker：</p>
+<pre tabindex="0"><code>docker run -d --name=frps --restart=always \
+    --network host \
+    -v /root/frps/frps.toml:/frp/frps.toml  \
+    stilleshan/frps
+</code></pre><p>注意，<code>/root/frps/frps.toml</code> 可以自行修改这个路径，先创建和修改好配置。</p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2023/01/frp-1.jpg" alt="frp-1"  /></p>
+<p>如果是用宝塔和腾讯服务器的话，记得允许这些端口。其中 <code>vhost_https_port</code> 是 https 的穿透端口，<code>dashboard_port</code> 是面板访问端口；<code>token</code> 是之后客户端验证需要。</p>
+<p>此时访问: http://服务器IP:7500 弹出要登陆，就OK啦！</p>
+<h3 id="群晖本地部署-frpc">群晖本地部署 frpc</h3>
+<p>2024/11/10 注明：群晖注册表正常已无法加载，通过本地 ssh 终端连接，手动 <code>docker pull xxxxx/xxxx</code> 拉去镜像搞定。</p>
+<p>项目地址：<a href="https://github.com/stilleshan/frpc" target="_blank" rel="noopener nofollow noreferrer" >https://github.com/stilleshan/frpc</a></p>
+<p>官方教程1：<a href="https://www.ioiox.com/archives/26.html" target="_blank" rel="noopener nofollow noreferrer" >群晖 NAS docker 安装（支持 docker 的群晖机型首选）</a></p>
+<p>官方教程2：<a href="https://www.ioiox.com/archives/6.html" target="_blank" rel="noopener nofollow noreferrer" >群晖 NAS 一键脚本安装（不支持 docker 的群晖机型）</a></p>
+<p>个人采用的是第一种 Docker 安装。</p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2023/01/frp-2.jpg" alt="frp-2"  /></p>
+<p>注册表搜索 <code>stilleshan/frpc</code> 下载完成之后，配置 <code>frpc.ini</code> 文件。</p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2023/01/frp-3.jpg" alt="frp-3"  /></p>
+<p>配置参考（0.61）：</p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2023/01/frp-4.jpg" alt="frp-4"  /></p>
+<pre tabindex="0"><code>serverAddr = &#34;111.xxxxxxx&#34;  # 服务器IP或者地址
+serverPort = 7000           # 服务器提供的端口号
+auth.method = &#34;token&#34;
+auth.token = &#34;usertoken&#34;    # 服务器设定的token
+
+[[proxies]]
+name = &#34;nas&#34;                # 唯一标识，不能和服务器端其他配置重名
+type = &#34;https&#34;              # https协议
+localIP = &#34;192.168.1.1&#34;     # 群晖内网IP.
+localPort = 443             # 需路由器端口转发 HTTPS 
+customDomains = [&#34;nas.xxx.com&#34;]   # 填写你的域名
+</code></pre><p>启动镜像，勾选使用高权限执行容器；高级设置，添加文件指定到你  frpc.ini 所在的位置。勾选使用与Docker Host相同的网络。完成。</p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2023/01/frp-6.jpg" alt="frp-6"  /></p>
+<h3 id="群晖内网穿透">群晖内网穿透</h3>
+<p>利用路由器的端口转发和群晖自带反代功能，方便多服务穿透，做以下设置：</p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2023/01/frp-7.jpg" alt="frp-7"  /></p>
+<p>路由器直接转发所有 443 到群晖，然后群晖反代如下设置：</p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2023/01/frp-5.jpg" alt="frp-5"  /></p>
+<p>这样，本地 docker 20010 端口跑的 talebook 服务就顺利穿出去啦～</p>
+<h3 id="服务器域名解析">服务器域名解析</h3>
+<p>直接加了一个 <code>*</code> 泛解析，方便绑定子域名解析。</p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2023/01/frp-9.jpg" alt="frp-9"  /></p>
+<p>若宝塔面板：新建网站，添加域名，申请 SSL 证书，修改配置文件。</p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2023/01/frp-8.jpg" alt="frp-8"  /></p>
+<pre tabindex="0"><code>    #frp
+    location / {
+        resolver 8.8.8.8;
+        proxy_ssl_server_name on;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Host $host:$server_port;
+        proxy_pass https://$host:8443; # 8443 是 frps.ini 里配置的 https 端口
+    }
+</code></pre><p>如服务出现样式显示问题，则把配置文件下面那段缓存代码删了。</p>
+<p>最后，重载/重启 Nginx 服务，搞定！</p>
+<h3 id="致谢及推荐">致谢及推荐</h3>
+<p>IOIOX：<a href="https://www.ioiox.com/" target="_blank" rel="noopener nofollow noreferrer" >https://www.ioiox.com/</a></p>
+<p>《卸载腾讯云对服务器的监控》：<a href="https://www.prkblog.cn/p/uninstall-tencent-cloud-monitor.html" target="_blank" rel="noopener nofollow noreferrer" >https://www.prkblog.cn/p/uninstall-tencent-cloud-monitor.html</a></p>]]></content><category scheme="https://yuranh211.github.io/tags/%E6%8A%98%E8%85%BE" term="%E6%8A%98%E8%85%BE" label="折腾"/></entry><entry><title type="html">iPhone16 到手之路</title><link href="https://yuranh211.github.io/buy-iphone16/" rel="alternate" type="text/html"/><id>https://yuranh211.github.io/buy-iphone16/</id><author><name>林木木</name></author><published>2024-09-28T21:03:05+08:00</published><updated>2024-09-28T21:03:05+08:00</updated><content type="html"><![CDATA[<p>如题图， 一看 So Strong，再瞅 So 泄气。</p>
+<p>从11、12年？乔帮主之后的 4s 开启苹果机，然后 8、12，到现在 16 Pro 到手。久远的感触掠过不表，说说 12 &ndash;&gt; 16 半日体验。硬件上充电后变 C 口；锁屏后能“全天候显示”；多了两实体按钮（自定义键、相机快捷键）。</p>
+<p>软件上，AI 不可用，而其它更新可忽略不计。</p>
+<h3 id="到手-吐槽-之路">到手 <del>（吐槽）</del> 之路</h3>
+<p>头一次13号首发前得到“当家的”同意，想着官网肯定抢不到，选择了🐶东 +99 得一年阉割版 AC 版本，晚8:02 完成支付，等待十几分钟后，显示“10月9日之后发货”……</p>
+<p>13～23号，流水如下：</p>
+<ul>
+<li>次日确认，🐶东就算有货也不发加了 AC 套餐的，统一10月9日之后发。线上客服和 Plus 专员客服都是统一口径。</li>
+<li>次日了解到，官方也排到10月9日之后了。所以，等等就等等吧。有个 AC 总比没有好。</li>
+<li>20号首批发货之后，21、22号小红书上看到说提前发货了，询问🐶东客服依旧咬死不变。</li>
+<li>看了看 PDD 优惠 400，犹豫抢的人应该不少，自己也没掐点抢一抢。</li>
+</ul>
+<p>直到本周一23号下午2点，随意打开多多直接弹出 400 优惠券，而且明显标记“最晚30前发货”，这速度全靠同行衬托。称得上急速。</p>
+<p>下单后问客服得到回复“最晚5天内发货”，果真今天周六28早上到手。实际是26号傍晚从北京发出的，快得令人感动。</p>
+<p>被各平台上的控诉视频吓怕，头一次全程录像拍了开箱视频，验证无磕无碰、无灰无尘，无激活无充电，Over 安全下车。</p>
+<h3 id="电报小惊吓">电报小惊吓</h3>
+<p>+86 是收不到验证短信的，开了国际漫游也无用。幸好电脑上还登着，能从 Telegram 服务通知查看到。惊吓自己十几分钟！</p>
+<p>简体中文包(聪聪)、小而美主题链接如下，电报点击即可安装。</p>
+<p><a href="tg://setlanguage?lang=zhcncc">tg://setlanguage?lang=zhcncc</a></p>
+<p><a href="https://t.me/addtheme/wechatv8" target="_blank" rel="noopener nofollow noreferrer" >https://t.me/addtheme/wechatv8</a></p>
+<h3 id="更多">更多？</h3>
+<p>相机快捷键，目前还不如没有。</p>
+<p>配件？目前已耗费 ¥58 另买了 2 根小米 3A 充电线，一根车上、另一根丢单位；还耗费 ¥216 买了图拉斯 ONeo 支点壳，性价比不高。</p>]]></content><category scheme="https://yuranh211.github.io/tags/%E6%97%A5%E5%B8%B8" term="%E6%97%A5%E5%B8%B8" label="日常"/></entry><entry><title type="html">Hi，Follow</title><link href="https://yuranh211.github.io/hi-follow/" rel="alternate" type="text/html"/><id>https://yuranh211.github.io/hi-follow/</id><author><name>林木木</name></author><published>2024-09-15T13:54:11+08:00</published><updated>2024-09-15T13:54:11+08:00</updated><content type="html"><![CDATA[<p>非常喜欢「Follow」这个名，F谁F什么内容本该是一种主动行为。古早有句调侃“打开 Feed 订阅器，如批阅奏章，或细看或一键已阅”。现在更是丰富多彩，一个 APP 集中浏览这奏章，有文、有图、有音频、有视频、还是通知，大千世界，尽在眼前 👀</p>
+<p>感谢 <a href="https://darmau.co" target="_blank" rel="noopener nofollow noreferrer" >@大毛</a> 的邀请码，使用 Follow （<a href="https://follow.is/" target="_blank" rel="noopener nofollow noreferrer" >https://follow.is/</a>） 已一周有余，趁台风天宅家记录一下 123。</p>
+<h3 id="什么可以-f">什么可以 F</h3>
+<p>如题图，直接粘贴链接即可判断是不是支持，比手动查询 RSS、RSSHub 规则等方便太多太多太多。</p>
+<p>光这点，已经满足很多刚需，各平台上的UP主、Vlog 动态、频道更新，不用一个个打开各自的 APP 接手各类算法推荐信息后才确认自己关注的是否更新。</p>
+<p>提醒：默认个人关注的 Feed 列表是公开的。</p>
+<h3 id="什么值得-f">什么值得 F</h3>
+<p>在具体的文章页面顶部，能看到一串头像，点开一个即可看这个小伙的关注列表，所以个别 Feed 记得选择好 Private 不公开。</p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2024/09/SCR-20240916-jwqg.jpeg.webp" alt=""  /></p>
+<h3 id="怎么-f-更爽">怎么 F 更爽</h3>
+<h4 id="图片模式">图片模式</h4>
+<p>把电报的云盘频道以图片瀑布流模式显示，嗯，养眼。🤩</p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2024/09/SCR-20240915-mleq.jpeg.webp" alt=""  /></p>
+<h4 id="视频模式">视频模式</h4>
+<p>B站、小红书、P站？……</p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2024/09/SCR-20240916-khsn.jpeg.webp" alt=""  /></p>
+<h3 id="怎么-f-更强">怎么 F 更强</h3>
+<h4 id="操作-action">操作 Action</h4>
+<p>开启全局 AI 摘要、过滤时间轴上的 Re 推等。简单点用来过滤，不知之后会不会加上自动化啥的。</p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2024/09/SCR-20240916-lgto.jpeg.webp" alt=""  /></p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2024/09/SCR-20240916-lhfj.jpeg.webp" alt=""  /></p>
+<h4 id="feed-claim">Feed Claim</h4>
+<p>认领自己的 Feed，收到内置的 Power 能量代币？不管与否，先认了再说。</p>
+<p>This message is used to verify that this feed (feedId:42331815237783583) belongs to me (userId:56221637590078464). Join me in enjoying the next generation information browser <a href="https://follow.is" target="_blank" rel="noopener nofollow noreferrer" >https://follow.is</a>.</p>
+<p><img loading='lazy' decoding="async" src="https://r2.immmmm.com/2024/09/SCR-20240916-kdij.png.webp" alt=""  /></p>
+<h3 id="结语">结语</h3>
+<p>照目前来看， Follow 充满了想象力，比如直接内置 xlog 平台的评论系统？付费订阅支付系统？</p>]]></content><category scheme="https://yuranh211.github.io/tags/%E6%8A%98%E8%85%BE" term="%E6%8A%98%E8%85%BE" label="折腾"/></entry></feed>
